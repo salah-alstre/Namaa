@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaa · نماء</title>
+    <style>
+      /* Pre-React splash so there is never a white flash. */
+      html,body{margin:0;height:100%;background:#0f1117;color:#e7e9f3;font-family:system-ui,sans-serif}
+      @media (prefers-color-scheme: light){html:not([data-theme="dark"]),html:not([data-theme="dark"]) body{background:#f6f7fb;color:#1b1e2b}}
+      html[data-theme="light"],html[data-theme="light"] body{background:#f6f7fb;color:#1b1e2b}
+      html[data-theme="dark"],html[data-theme="dark"] body{background:#0f1117;color:#e7e9f3}
+      #boot{position:fixed;inset:0;display:grid;place-items:center}
+      #boot img{width:84px;height:84px;animation:bootpulse 1.6s ease-in-out infinite}
+      @keyframes bootpulse{0%,100%{transform:scale(.94);opacity:.8}50%{transform:scale(1);opacity:1}}
+    </style>
+  </head>
+  <body>
+    <div id="root"><div id="boot"><img src="/logo.svg" alt="" /></div></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

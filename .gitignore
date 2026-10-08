@@ -1,0 +1,35 @@
+﻿# dependencies & build output
+node_modules
+dist
+src-tauri/target
+src-tauri/gen
+coverage
+
+# logs
+*.log
+
+# secrets & credentials (API keys live in the OS credential store, never in the repo)
+.env
+.env.*
+*.key
+*.pem
+secrets.*
+credentials.*
+
+# local data, caches and backups
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+tts-cache/
+*.raqam-backup
+*.mp3.part
+
+# temporary files
+tmp/
+temp/
+docs/screenshots/tmp/
+docs/screenshots/*.tmp.png
+Thumbs.db
+desktop.ini
+.DS_Store

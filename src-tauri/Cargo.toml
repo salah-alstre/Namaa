@@ -1,0 +1,33 @@
+[package]
+name = "raqam"
+version = "1.0.0"
+description = "Namaa — an offline learning studio for mathematics and English"
+authors = ["Namaa"]
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "raqam_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-notification = "2"
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["default-tls"] }
+sha2 = "0.10"
+hex = "0.4"
+keyring = { version = "3", features = ["windows-native", "apple-native", "sync-secret-service"] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true
